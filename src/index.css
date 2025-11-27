@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+Scoped to .appomate-roi-calculator to prevent conflicts with WordPress theme.
+*/
+
+@layer base {
+  .appomate-roi-calculator {
+    --background: 0 0% 100%;
+    --foreground: 210 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 15%;
+
+    /* Gray - Standard Primary */
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Gray - Standard Secondary */
+    --secondary: 0 0% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Gray - Standard Accent */
+    --accent: 0 0% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Red - Alerts/CTA */
+    --destructive: 0 75% 70%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 60%;
+
+    --radius: 0.5rem;
+
+    /* Custom Healthcare Colors */
+    --oxford-blue: 212 80% 26%;
+    --persian-green: 188 75% 35%;
+    --soft-teal: 188 50% 50%;
+    --soft-blue: 200 70% 85%;
+    --watermelon-red: 0 75% 70%;
+    --lavender-grey: 228 15% 94%;
+    --charcoal: 0 0% 11%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--oxford-blue)), hsl(var(--persian-green)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--soft-teal)), hsl(var(--persian-green)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--persian-green)), hsl(var(--soft-teal)));
+
+    /* Shadows */
+    --shadow-primary: 0 10px 30px -10px hsl(var(--oxford-blue) / 0.3);
+    --shadow-secondary: 0 4px 20px -4px hsl(var(--persian-green) / 0.2);
+    --shadow-soft: 0 2px 10px -2px hsl(var(--charcoal) / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .appomate-roi-calculator.dark {
+    --background: 0 0% 11%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 11%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 188 75% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 212 80% 26%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 188 50% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 70%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 188 75% 35%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Scoped base styles - only apply within calculator wrapper */
+  .appomate-roi-calculator * {
+    border-color: hsl(var(--border));
+  }
+
+  .appomate-roi-calculator {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  /* Typography System - scoped to wrapper */
+  .appomate-roi-calculator h1,
+  .appomate-roi-calculator h2,
+  .appomate-roi-calculator h3,
+  .appomate-roi-calculator h4,
+  .appomate-roi-calculator h5,
+  .appomate-roi-calculator h6 {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .appomate-roi-calculator h1 {
+    font-weight: 600; /* Semi Bold */
+  }
+
+  .appomate-roi-calculator h2,
+  .appomate-roi-calculator h3,
+  .appomate-roi-calculator h4 {
+    font-weight: 500; /* Medium */
+  }
+
+  .appomate-roi-calculator p,
+  .appomate-roi-calculator span,
+  .appomate-roi-calculator div {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 400; /* Regular */
+  }
+
+  /* WordPress Isolation Layer - Prevent theme styles from bleeding in */
+  /* High specificity overrides to prevent WordPress theme interference */
+
+  /* Reset box model for all elements inside calculator */
+  .appomate-roi-calculator *,
+  .appomate-roi-calculator *::before,
+  .appomate-roi-calculator *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* Force typography reset to prevent WordPress theme interference */
+  .appomate-roi-calculator h1,
+  .appomate-roi-calculator h2,
+  .appomate-roi-calculator h3,
+  .appomate-roi-calculator h4,
+  .appomate-roi-calculator h5,
+  .appomate-roi-calculator h6 {
+    font-family: 'Quicksand', sans-serif !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .appomate-roi-calculator h1 {
+    font-weight: 600 !important; /* Semi Bold */
+    font-size: 2.25rem !important; /* 36px */
+  }
+
+  .appomate-roi-calculator h2 {
+    font-weight: 500 !important; /* Medium */
+    font-size: 1.875rem !important; /* 30px */
+  }
+
+  .appomate-roi-calculator h3 {
+    font-weight: 500 !important; /* Medium */
+    font-size: 1.5rem !important; /* 24px */
+  }
+
+  .appomate-roi-calculator h4 {
+    font-weight: 500 !important; /* Medium */
+    font-size: 1.25rem !important; /* 20px */
+  }
+
+  .appomate-roi-calculator h5 {
+    font-weight: 400 !important;
+    font-size: 1.125rem !important; /* 18px */
+  }
+
+  .appomate-roi-calculator h6 {
+    font-weight: 400 !important;
+    font-size: 1rem !important; /* 16px */
+  }
+
+  .appomate-roi-calculator p {
+    font-family: 'Instrument Sans', sans-serif !important;
+    font-weight: 400 !important; /* Regular */
+    line-height: 1.6 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .appomate-roi-calculator span,
+  .appomate-roi-calculator div,
+  .appomate-roi-calculator label,
+  .appomate-roi-calculator button {
+    font-family: 'Instrument Sans', sans-serif !important;
+    font-weight: 400 !important; /* Regular */
+  }
+
+  /* Prevent WordPress list styles from affecting calculator */
+  .appomate-roi-calculator ul,
+  .appomate-roi-calculator ol {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .appomate-roi-calculator li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Prevent WordPress link styles */
+  .appomate-roi-calculator a {
+    text-decoration: none !important;
+  }
+
+  /* Prevent WordPress blockquote styles */
+  .appomate-roi-calculator blockquote {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* Prevent WordPress image styles */
+  .appomate-roi-calculator img {
+    max-width: 100% !important;
+    height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+

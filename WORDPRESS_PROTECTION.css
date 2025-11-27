@@ -1,0 +1,55 @@
+/**
+ * CRITICAL: Add this to WordPress Theme's Custom CSS
+ *
+ * Location: Appearance → Customize → Additional CSS
+ *
+ * This protects your WordPress theme from the ROI Calculator's Tailwind reset styles
+ */
+
+/* Protect WordPress header from calculator interference */
+body:not(.appomate-roi-calculator) header,
+body:not(.appomate-roi-calculator) .header_top,
+body:not(.appomate-roi-calculator) .header_bottom,
+body:not(.appomate-roi-calculator) nav,
+body:not(.appomate-roi-calculator) .main_menu {
+  all: revert !important;
+}
+
+/* Restore WordPress theme styles outside calculator */
+body > *:not(#root):not(.appomate-roi-calculator),
+body > *:not(#root):not(.appomate-roi-calculator) * {
+  all: revert;
+}
+
+/* Specifically protect header elements */
+.header_top,
+.header_bottom,
+.q_logo,
+nav.main_menu,
+nav.main_menu ul,
+nav.main_menu ul li,
+nav.main_menu ul li a {
+  all: revert !important;
+  display: revert !important;
+  position: revert !important;
+  margin: revert !important;
+  padding: revert !important;
+  font-family: revert !important;
+  font-size: revert !important;
+  line-height: revert !important;
+  color: revert !important;
+}
+
+/* Force WordPress header above calculator modal */
+header,
+.header_top,
+.header_bottom {
+  z-index: 9999999 !important;
+  position: relative !important;
+}
+
+/* Ensure modal appears above header */
+.appomate-roi-calculator [data-radix-popper-content-wrapper],
+.appomate-roi-calculator [role="dialog"] {
+  z-index: 99999999 !important;
+}
