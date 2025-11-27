@@ -548,8 +548,8 @@ const ROIQuiz = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-6 md:py-8">
+    <div className="bg-white">
+      <div className="appomate-container">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-6 md:mb-8">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-oxford-blue mb-2 md:mb-3">

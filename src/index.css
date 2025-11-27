@@ -251,6 +251,67 @@ Scoped to .appomate-roi-calculator to prevent conflicts with WordPress theme.
     border: none !important;
     box-shadow: none !important;
   }
+
+  /* Custom scoped container to replace Tailwind's global .container */
+  .appomate-roi-calculator .appomate-container {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  @media (min-width: 640px) {
+    .appomate-roi-calculator .appomate-container {
+      max-width: 640px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .appomate-roi-calculator .appomate-container {
+      max-width: 768px !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .appomate-roi-calculator .appomate-container {
+      max-width: 1024px !important;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .appomate-roi-calculator .appomate-container {
+      max-width: 1280px !important;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .appomate-roi-calculator .appomate-container {
+      max-width: 1536px !important;
+    }
+  }
+
+  /* Modal z-index fix for WordPress - ensure modals appear above WordPress header */
+  /* WordPress headers typically use z-index: 1000-10000 range */
+  .appomate-roi-calculator [data-radix-dialog-overlay],
+  [data-radix-dialog-overlay] {
+    z-index: 999999 !important;
+  }
+
+  .appomate-roi-calculator [data-radix-dialog-content],
+  [data-radix-dialog-content] {
+    z-index: 999999 !important;
+  }
+
+  /* Ensure modal is centered and has appropriate max height */
+  .appomate-roi-calculator [data-radix-dialog-content] {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-height: 70vh !important;
+    margin-top: 60px !important; /* Account for WordPress header */
+  }
 }
 
 

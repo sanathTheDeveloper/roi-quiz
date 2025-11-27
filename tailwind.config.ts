@@ -11,14 +11,13 @@ export default {
 	// Important selector strategy - scope all Tailwind to the calculator wrapper
 	important: '.appomate-roi-calculator',
 	prefix: "",
+	// Disable container plugin to prevent global .container pollution in WordPress
+	corePlugins: {
+		container: false,
+	},
 	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
-		},
+		// Container disabled to prevent global .container pollution in WordPress
+		// Using custom .appomate-container class in index.css instead
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',

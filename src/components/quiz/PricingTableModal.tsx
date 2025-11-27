@@ -16,7 +16,7 @@ const PricingTableModal: React.FC<PricingTableModalProps> = ({
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-6xl max-h-[95vh] overflow-y-auto bg-white text-gray-900 p-0 sm:rounded-2xl shadow-2xl z-[999999] border-0">
+      <DialogContent className="max-w-6xl max-h-[70vh] overflow-y-auto bg-white text-gray-900 p-0 sm:rounded-2xl shadow-2xl z-[999999] border-0">
         {/* Accessibility - Hidden title and description */}
         <DialogTitle className="sr-only">24/7 AI Healthcare Receptionist Pricing Details</DialogTitle>
         <DialogDescription className="sr-only">
